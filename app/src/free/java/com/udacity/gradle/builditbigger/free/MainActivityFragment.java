@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.udacity.gradle.builditbigger.BuildConfig;
 import com.udacity.gradle.builditbigger.R;
 
 
@@ -25,7 +24,6 @@ public class MainActivityFragment extends Fragment {
                              Bundle savedInstanceState) {
         View root = inflater.inflate( R.layout.fragment_main, container, false);
 
-        if (!BuildConfig.IS_PAID){
         AdView mAdView = (AdView) root.findViewById(R.id.adView);
         // Create an ad request. Check logcat output for the hashed device ID to
         // get test ads on a physical device. e.g.
@@ -34,9 +32,7 @@ public class MainActivityFragment extends Fragment {
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build();
         mAdView.loadAd(adRequest);
-        } else {
-            //there is no ad
-        }
+
         return root;
     }
 }
