@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Jokes Andro Lib</string>
+    <string name="error_no_joke_available">No joke here, please go back later</string>
+</resources>
